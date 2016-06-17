@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="422.0" prefWidth="434.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainController">
+   <children>
+      <BorderPane layoutX="57.0" layoutY="41.0" prefHeight="290.0" prefWidth="340.0">
+         <center>
+            <BorderPane prefHeight="302.0" prefWidth="368.0" BorderPane.alignment="CENTER">
+               <center>
+                  <GridPane prefHeight="157.0" prefWidth="326.0" BorderPane.alignment="CENTER">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints maxHeight="32.0" minHeight="10.0" prefHeight="32.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="32.0" minHeight="10.0" prefHeight="32.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <Label layoutX="83.0" layoutY="145.0" text="Databasename" />
+                        <Label layoutX="83.0" layoutY="183.0" text="Databaseusername" GridPane.rowIndex="1" />
+                        <Label layoutX="83.0" layoutY="215.0" text="Databasepassword" GridPane.rowIndex="2" />
+                        <Label layoutX="83.0" layoutY="251.0" prefHeight="17.0" prefWidth="70.0" text="IP-Adresse" GridPane.rowIndex="3" />
+                        <Label layoutX="83.0" layoutY="283.0" text="Port" GridPane.rowIndex="4" />
+                        <TextField fx:id="dbtn" layoutX="232.0" layoutY="140.0" promptText="DB-Name" GridPane.columnIndex="1" />
+                        <TextField fx:id="dbtu" layoutX="232.0" layoutY="178.0" promptText="Benutzer" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <PasswordField fx:id="dbtp" layoutX="232.0" layoutY="210.0" promptText="Passwort" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <TextField fx:id="dbtip" layoutX="232.0" layoutY="246.0" promptText="IP-Adresse" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <TextField fx:id="dbtport" layoutX="232.0" layoutY="278.0" promptText="Port-Nummer" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                     </children>
+                  </GridPane>
+               </center>
+            </BorderPane>
+         </center>
+         <bottom>
+            <HBox alignment="BOTTOM_CENTER" prefHeight="62.0" prefWidth="345.0" spacing="30.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Button layoutX="126.0" layoutY="351.0" mnemonicParsing="false" onAction="#Connect" text="Connect" />
+                  <Button layoutX="222.0" layoutY="351.0" mnemonicParsing="false" onAction="#closeConnection" text="Disconnect" />
+               </children>
+            </HBox>
+         </bottom>
+         <top>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="33.0" prefWidth="265.0" text="Database-Connector" BorderPane.alignment="CENTER">
+               <font>
+                  <Font name="System Bold Italic" size="24.0" />
+               </font>
+            </Label>
+         </top>
+      </BorderPane>
+      <Label fx:id="lbc" layoutX="171.0" layoutY="360.0" text="Not Connected" />
+   </children>
+</AnchorPane>
